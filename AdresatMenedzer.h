@@ -29,6 +29,7 @@ public:
     int pobierzZPlikuIdOstatniegoAdresata();
     void wyswietlWszystkichAdresatow();
     void wyswietlDaneAdresata(Adresat adresat);
+    void utworzPlikZAdresatami();
 
 
 };

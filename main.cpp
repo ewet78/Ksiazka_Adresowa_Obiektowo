@@ -34,8 +34,8 @@ if (idZalogowanegoUzytkownika == 0)
                 break;
             case '2':
                 idZalogowanegoUzytkownika = ksiazkaAdresowa.logowanieUzytkownika();
-                idOstatniegoAdresata = ksiazkaAdresowa.podajIdOstatniegoAdresata();
                 ksiazkaAdresowa.wczytajAdresatowZPliku(idZalogowanegoUzytkownika);
+                idOstatniegoAdresata = ksiazkaAdresowa.podajIdOstatniegoAdresata();
                 break;
             case '9':
                 exit(0);

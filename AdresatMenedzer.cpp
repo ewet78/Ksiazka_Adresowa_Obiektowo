@@ -50,26 +50,7 @@ void AdresatMenedzer::wczytajAdresatowZPliku(int idZalogowanegoUzytkownika)
 
 int AdresatMenedzer::pobierzZPlikuIdOstatniegoAdresata()
 {
-    int idOstatniegoAdresata = 0;
-    string daneJednegoAdresataOddzielonePionowymiKreskami = "";
-    string daneOstaniegoAdresataWPliku = "";
-    fstream plikTekstowy;
-    plikTekstowy.open(plikZAdresatami.nazwaPlikuZAdresatami.c_str(), ios::in);
-
-    if (plikTekstowy.good() == true)
-    {
-        while (getline(plikTekstowy, daneJednegoAdresataOddzielonePionowymiKreskami)) {}
-            daneOstaniegoAdresataWPliku = daneJednegoAdresataOddzielonePionowymiKreskami;
-            plikTekstowy.close();
-    }
-    else
-        cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
-
-    if (daneOstaniegoAdresataWPliku != "")
-    {
-        idOstatniegoAdresata = plikZAdresatami.pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
-    }
-    return idOstatniegoAdresata;
+    plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
 }
 
 void AdresatMenedzer::wyswietlWszystkichAdresatow()
@@ -100,4 +81,8 @@ void AdresatMenedzer::wyswietlDaneAdresata(Adresat adresat)
     cout << "Numer telefonu:     " << adresat.nrTelefonu << endl;
     cout << "Email:              " << adresat.email << endl;
     cout << "Adres:              " << adresat.adres << endl;
+}
+void AdresatMenedzer::utworzPlikZAdresatami()
+{
+    plikZAdresatami.utworzPlikZAdresatami();
 }
