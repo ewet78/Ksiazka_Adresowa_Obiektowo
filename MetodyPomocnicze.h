@@ -12,10 +12,10 @@ class MetodyPomocnicze
 {
 public:
     static string konwerjsaIntNaString(int liczba);
-    int konwersjaStringNaInt(string liczba);
-    string pobierzLiczbe(string tekst, int pozycjaZnaku);
-    string wczytajLinie();
-    string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    static int konwersjaStringNaInt(string liczba);
+    static string pobierzLiczbe(string tekst, int pozycjaZnaku);
+    static string wczytajLinie();
+    static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 };
 
 #endif

@@ -50,7 +50,7 @@ void AdresatMenedzer::wczytajAdresatowZPliku(int idZalogowanegoUzytkownika)
 
 int AdresatMenedzer::pobierzZPlikuIdOstatniegoAdresata()
 {
-    plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
+   plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
 }
 
 void AdresatMenedzer::wyswietlWszystkichAdresatow()
