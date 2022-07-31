@@ -6,9 +6,14 @@ void KsiazkaAdresowa::rejestracjaUzytkownika()
     uzytkownikMenedzer.rejestracjaUzytkownika();
 }
 
-int KsiazkaAdresowa::logowanieUzytkownika()
+void KsiazkaAdresowa::logowanieUzytkownika()
 {
     uzytkownikMenedzer.logowanieUzytkownika();
+    if (uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+    }
+
 }
 
 void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
@@ -21,21 +26,43 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytk
     uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
 }
 
-void KsiazkaAdresowa::wczytajAdresatowZPliku(int idZalogowanegoUzytownika)
+void KsiazkaAdresowa::wylogowanieUzytkownika()
 {
-    adresatMenedzer.wczytajAdresatowZPliku(idZalogowanegoUzytownika);
+    uzytkownikMenedzer.wylogowanieUzytkownika();
+    delete adresatMenedzer;
+    adresatMenedzer = NULL;
+
 }
 
-void KsiazkaAdresowa::dodawanieAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+void KsiazkaAdresowa::wczytajAdresatowZPliku(int idZalogowanegoUzytownika)
 {
-    adresatMenedzer.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+    adresatMenedzer->wczytajAdresatowZPliku();
+}
+
+void KsiazkaAdresowa::dodawanieAdresata()
+{
+    if (uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer->dodajAdresata();
+    }
+    else
+    {
+        cout << "Aby dodac adresata, nalezy najpierw sie zalogowac" << endl;
+        system("pause");
+    }
+
 }
 int KsiazkaAdresowa::podajIdOstatniegoAdresata()
 {
-    adresatMenedzer.pobierzZPlikuIdOstatniegoAdresata();
+    adresatMenedzer->pobierzZPlikuIdOstatniegoAdresata();
 }
 
 void KsiazkaAdresowa::wyswietlAdresatow()
 {
-    adresatMenedzer.wyswietlWszystkichAdresatow();
+    adresatMenedzer->wyswietlWszystkichAdresatow();
+}
+
+void KsiazkaAdresowa::wyswietlMenuGlowne()
+{
+    menu.menuGlowne();
 }

@@ -1,22 +1,7 @@
-#include <iostream>
+#include "Menu.h"
 
-#include "Ksiazka_Adresowa.h"
-
-using namespace std;
-
-int main()
+void Menu::menuGlowne()
 {
-
-KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
-
-int idZalogowanegoUzytkownika = 0;
-int idOstatniegoAdresata = 0;
-char wybor;
-
-while (true)
-{
-if (idZalogowanegoUzytkownika == 0)
-        {
     system("cls");
     cout << "    >>> MENU  GLOWNE <<<" << endl;
     cout << "---------------------------" << endl;
@@ -34,8 +19,7 @@ if (idZalogowanegoUzytkownika == 0)
                 break;
             case '2':
                 ksiazkaAdresowa.logowanieUzytkownika();
-                ksiazkaAdresowa.wczytajAdresatowZPliku(idZalogowanegoUzytkownika);
-                idOstatniegoAdresata = ksiazkaAdresowa.podajIdOstatniegoAdresata();
+                ksiazkaAdresowa.wczytajAdresatowZPliku(adresatMenedzer.pobierzIdZalogowanegoUzytkownika());
                 break;
             case '9':
                 exit(0);
@@ -45,10 +29,11 @@ if (idZalogowanegoUzytkownika == 0)
                 system("pause");
                 break;
             }
-        }
-if (idZalogowanegoUzytkownika != 0)
-    {
-    system("cls");
+}
+
+void Menu::menuUzytkownika()
+{
+   system("cls");
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
     cout << "---------------------------" << endl;
     cout << "1. Dodaj adresata" << endl;
@@ -70,11 +55,11 @@ if (idZalogowanegoUzytkownika != 0)
                 break;
 
             case '7':
-                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(adresatMenedzer.pobierzIdZalogowanegoUzytkownika());
                 break;
 
             case '8':
-                idZalogowanegoUzytkownika = 0;
+                ksiazkaAdresowa.wylogowanieUzytkownika();
                 break;
 
             default:
@@ -82,10 +67,4 @@ if (idZalogowanegoUzytkownika != 0)
                 system("pause");
                 break;
             }
-}
-
-}
-
-//ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-    return 0;
 }
