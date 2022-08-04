@@ -8,14 +8,15 @@ int main()
 {
 
 KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
+UzytkownikMenedzer menu("Uzytkownicy");
 
-int idZalogowanegoUzytkownika = 0;
-int idOstatniegoAdresata = 0;
+ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+
 char wybor;
 
 while (true)
 {
-if (idZalogowanegoUzytkownika == 0)
+if (menu.pobierzIdZalogowanegoUzytkownika() == 0)
         {
     system("cls");
     cout << "    >>> MENU  GLOWNE <<<" << endl;
@@ -34,8 +35,6 @@ if (idZalogowanegoUzytkownika == 0)
                 break;
             case '2':
                 ksiazkaAdresowa.logowanieUzytkownika();
-                ksiazkaAdresowa.wczytajAdresatowZPliku(idZalogowanegoUzytkownika);
-                idOstatniegoAdresata = ksiazkaAdresowa.podajIdOstatniegoAdresata();
                 break;
             case '9':
                 exit(0);
@@ -46,7 +45,7 @@ if (idZalogowanegoUzytkownika == 0)
                 break;
             }
         }
-if (idZalogowanegoUzytkownika != 0)
+if (menu.pobierzIdZalogowanegoUzytkownika() > 0)
     {
     system("cls");
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
@@ -70,11 +69,11 @@ if (idZalogowanegoUzytkownika != 0)
                 break;
 
             case '7':
-                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
 
             case '8':
-                idZalogowanegoUzytkownika = 0;
+                ksiazkaAdresowa.wylogowanieUzytkownika();
                 break;
 
             default:
@@ -86,6 +85,6 @@ if (idZalogowanegoUzytkownika != 0)
 
 }
 
-//ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+
     return 0;
 }

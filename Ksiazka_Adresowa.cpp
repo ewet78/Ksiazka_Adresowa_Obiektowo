@@ -21,9 +21,10 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
     uzytkownikMenedzer.wypiszWszystkichUzytkownikow();
 }
 
-void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 {
-    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+
+    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
 }
 
 void KsiazkaAdresowa::wylogowanieUzytkownika()
@@ -60,9 +61,4 @@ int KsiazkaAdresowa::podajIdOstatniegoAdresata()
 void KsiazkaAdresowa::wyswietlAdresatow()
 {
     adresatMenedzer->wyswietlWszystkichAdresatow();
-}
-
-void KsiazkaAdresowa::wyswietlMenuGlowne()
-{
-    menu.menuGlowne();
 }

@@ -41,6 +41,12 @@ int UzytkownikMenedzer::pobierzIdNowegoUzytkownika()
         return uzytkownicy.back().pobierzId() + 1;
 }
 
+void UzytkownikMenedzer::ustawIdZalogowanegoUzytkownika(int noweId)
+{
+    if(noweId >= 0)
+        idZalogowanegoUzytkownika=noweId;
+}
+
 bool UzytkownikMenedzer::czyIstniejeLogin(string login)
 {
     for (int i=0; i < uzytkownicy.size(); i++)
@@ -73,6 +79,7 @@ int UzytkownikMenedzer::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
+    MetodyPomocnicze::wczytajLinie();
 
     cout << endl << "Podaj login: ";
     login = MetodyPomocnicze::wczytajLinie();
@@ -92,7 +99,7 @@ int UzytkownikMenedzer::logowanieUzytkownika()
                     idZalogowanegoUzytkownika = itr -> pobierzId();
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return;
+                    return idZalogowanegoUzytkownika;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
