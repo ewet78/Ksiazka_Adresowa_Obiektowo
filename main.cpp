@@ -8,15 +8,15 @@ int main()
 {
 
 KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
-UzytkownikMenedzer menu("Uzytkownicy");
 
-ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+//ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+//system("pause");
 
 char wybor;
 
 while (true)
 {
-if (menu.pobierzIdZalogowanegoUzytkownika() == 0)
+if (!ksiazkaAdresowa.czyUzytkownikJestZalogowany())
         {
     system("cls");
     cout << "    >>> MENU  GLOWNE <<<" << endl;
@@ -45,7 +45,7 @@ if (menu.pobierzIdZalogowanegoUzytkownika() == 0)
                 break;
             }
         }
-if (menu.pobierzIdZalogowanegoUzytkownika() > 0)
+else
     {
     system("cls");
     cout << " >>> MENU UZYTKOWNIKA <<<" << endl;

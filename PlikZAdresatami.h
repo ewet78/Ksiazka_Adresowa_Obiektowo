@@ -27,8 +27,8 @@ public:
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
-    int pobierzZPlikuIdOstatniegoAdresata();
     void utworzPlikZAdresatami();
+    int pobierzIdOstatniegoAdresata();
 };
 
 

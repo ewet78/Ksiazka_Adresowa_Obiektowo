@@ -53,12 +53,17 @@ void KsiazkaAdresowa::dodawanieAdresata()
     }
 
 }
-int KsiazkaAdresowa::podajIdOstatniegoAdresata()
-{
-    adresatMenedzer->pobierzZPlikuIdOstatniegoAdresata();
-}
 
 void KsiazkaAdresowa::wyswietlAdresatow()
 {
     adresatMenedzer->wyswietlWszystkichAdresatow();
 }
+
+ bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
+ {
+     if (uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+     {
+         return true;
+     }
+     else return false;
+ }

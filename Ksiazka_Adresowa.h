@@ -34,6 +34,7 @@ public:
     void dodawanieAdresata();
     int podajIdOstatniegoAdresata();
     void wyswietlAdresatow();
+    bool czyUzytkownikJestZalogowany();
 
 
 };

@@ -1,6 +1,6 @@
 #include "AdresatMenedzer.h"
 
-int AdresatMenedzer::dodajAdresata()
+void AdresatMenedzer::dodajAdresata()
 {
     Adresat adresat;
 
@@ -22,7 +22,7 @@ Adresat AdresatMenedzer::podajDaneNowegoAdresata()
     string imie, nazwisko, nrTelefonu, email, adres;
 
     MetodyPomocnicze::wczytajLinie();
-    adresat.ustawId( (plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata() + 1) );
+    adresat.ustawId( (plikZAdresatami.pobierzIdOstatniegoAdresata() + 1) );
     adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
@@ -55,10 +55,6 @@ void AdresatMenedzer::wczytajAdresatowZPliku()
     adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 }
 
-int AdresatMenedzer::pobierzZPlikuIdOstatniegoAdresata()
-{
-   return plikZAdresatami.pobierzZPlikuIdOstatniegoAdresata();
-}
 
 void AdresatMenedzer::wyswietlWszystkichAdresatow()
 {

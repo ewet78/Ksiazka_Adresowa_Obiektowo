@@ -29,7 +29,7 @@ public:
             {
                 adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
             };
-    int dodajAdresata();
+    void dodajAdresata();
     int pobierzIdZalogowanegoUzytkownika();
     void wczytajAdresatowZPliku();
     int pobierzZPlikuIdOstatniegoAdresata();
