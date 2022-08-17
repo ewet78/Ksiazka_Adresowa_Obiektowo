@@ -36,6 +36,9 @@ public:
     void wyswietlWszystkichAdresatow();
     void wyswietlDaneAdresata(Adresat adresat);
     void utworzPlikZAdresatami();
+    void wyszukajAdresatowPoImieniu();
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
+    void wyszukajAdresatowPoNazwisku();
 
 
 };

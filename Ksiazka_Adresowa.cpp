@@ -67,3 +67,12 @@ void KsiazkaAdresowa::wyswietlAdresatow()
      }
      else return false;
  }
+void KsiazkaAdresowa::wyszukiwaniePoImieniu()
+{
+    adresatMenedzer->wyszukajAdresatowPoImieniu();
+}
+
+void KsiazkaAdresowa::wyszukiwaniePoNazwisku()
+{
+    adresatMenedzer->wyszukajAdresatowPoNazwisku();
+}
