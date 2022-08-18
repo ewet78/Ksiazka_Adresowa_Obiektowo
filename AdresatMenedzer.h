@@ -32,7 +32,6 @@ public:
     void dodajAdresata();
     int pobierzIdZalogowanegoUzytkownika();
     void wczytajAdresatowZPliku();
-    int pobierzZPlikuIdOstatniegoAdresata();
     void wyswietlWszystkichAdresatow();
     void wyswietlDaneAdresata(Adresat adresat);
     void utworzPlikZAdresatami();
