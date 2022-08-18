@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
 
-KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
+KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt", "Adresaci_tymczasowy.txt");
 
 //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
 //system("pause");
@@ -76,6 +76,9 @@ else
                 break;
             case '4':
                 ksiazkaAdresowa.wyswietlAdresatow();
+                break;
+            case '5':
+                ksiazkaAdresowa.usunAdresata();
                 break;
 
             case '7':
