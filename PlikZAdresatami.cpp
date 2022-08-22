@@ -268,4 +268,10 @@ void PlikZAdresatami::edytujWybranaLinieWPliku(string liniaZDanymiAdresataOddzie
     }
 }
 
+string PlikZAdresatami::pobierzNazweTymczasowegoPliku()
+{
+    return NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI;
+}
+
+
 
