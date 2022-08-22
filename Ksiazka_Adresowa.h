@@ -39,6 +39,7 @@ public:
     void wyszukiwaniePoImieniu();
     void wyszukiwaniePoNazwisku();
     void usunAdresata();
+    void edytujAdresata();
 
 
 };

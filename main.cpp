@@ -9,9 +9,6 @@ int main()
 
 KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt", "Adresaci_tymczasowy.txt");
 
-//ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-//system("pause");
-
 char wybor;
 
 while (true)
@@ -80,7 +77,9 @@ else
             case '5':
                 ksiazkaAdresowa.usunAdresata();
                 break;
-
+            case '6':
+                ksiazkaAdresowa.edytujAdresata();
+                break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
